@@ -202,13 +202,13 @@ public:
 			const bgfx::Caps* caps = bgfx::getCaps();
 			bx::mtxProj(proj, 60.0f, float(m_width)/float(m_height), 0.1f, 100.0f, caps->homogeneousDepth);
 
-			// Set view and projection matrix for view 1.
+			// Set view and projection matrix for view 0.
 			bgfx::setViewTransform(0, view, proj);
 
 			float ortho[16];
 			bx::mtxOrtho(ortho, 0.0f, 1280.0f, 720.0f, 0.0f, 0.0f, 100.0f, 0.0, caps->homogeneousDepth);
 
-			// Set view and projection matrix for view 0.
+			// Set view and projection matrix for view 1.
 			bgfx::setViewTransform(1, NULL, ortho);
 
 			float time = (float)( (bx::getHPCounter()-m_timeOffset)/double(bx::getHPFrequency() ) );
